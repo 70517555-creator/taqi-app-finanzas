@@ -28,3 +28,19 @@ Se utilizó GitHub Actions para automatizar procesos.
 
 ## Autores
 Equipo TAQI
+
+# TAQI - App de Finanzas
+
+## Descripción
+Aplicación para gestionar ingresos y gastos personales.
+
+## Funcionalidades
+- Registro de ingresos
+- Registro de gastos
+- Cálculo de saldo
+
+## GitFlow
+Se utilizaron ramas main, develop y feature.
+
+## CI/CD
+Se implementó GitHub Actions para automatización.
