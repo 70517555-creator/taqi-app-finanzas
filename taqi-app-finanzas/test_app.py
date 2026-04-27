@@ -1,4 +1,4 @@
-from modelo import Finanzas
+from src.modelo import Finanzas
 import pytest
 
 
