@@ -25,5 +25,4 @@ jobs:
 
     - name: Ejecutar pruebas
       run: |
-         cd src
-         python -m pytest -v
+        python -m pytest -v
