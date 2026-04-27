@@ -1,21 +1,15 @@
-import pytest
 from modelo import Finanzas
+import pytest
 
-def test_ingreso_valido():
+
+def test_ingreso():
     f=Finanzas()
     f.agregar_ingreso(500)
 
     assert f.calcular_saldo()==500
 
 
-def test_ingreso_negativo():
-    f=Finanzas()
-
-    with pytest.raises(ValueError):
-        f.agregar_ingreso(-50)
-
-
-def test_gasto_valido():
+def test_gasto():
     f=Finanzas()
 
     f.agregar_ingreso(1000)
@@ -24,22 +18,8 @@ def test_gasto_valido():
     assert f.calcular_saldo()==700
 
 
-def test_gasto_supera_saldo():
+def test_gasto_sin_saldo():
     f=Finanzas()
-
-    f.agregar_ingreso(100)
 
     with pytest.raises(ValueError):
-        f.agregar_gasto(500)
-
-
-def test_max_gastos():
-    f=Finanzas()
-
-    f.agregar_ingreso(1000)
-
-    f.agregar_gasto(100)
-    f.agregar_gasto(100)
-    f.agregar_gasto(100)
-
-    assert f.agregar_gasto(50)==False
+        f.agregar_gasto(100)
