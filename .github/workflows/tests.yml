@@ -7,21 +7,17 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-
       - name: Instalar dependencias
         run: |
           python -m pip install --upgrade pip
-          pip install pytest
-          pip install pytest-cov
-          pip install sqlalchemy
-
+          pip install pytest pytest-cov sqlalchemy
       - name: Ejecutar pruebas
         run: |
-         pytest taqi-app-finanzas/test_app.py -v
+          cd taqi-app-finanzas
+          pip install sqlalchemy
+          pytest test_app.py -v
